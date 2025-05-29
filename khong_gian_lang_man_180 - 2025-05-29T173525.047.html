@@ -2,53 +2,34 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy anniversary 1 year</title>
+  <title>Không gian 180 độ lãng mạn</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      background: #000;
+      background: #000000;
       overflow: hidden;
       font-family: 'Quicksand', sans-serif;
-      perspective: 800px;
+      perspective: 1000px;
       height: 100vh;
       position: relative;
       transform-style: preserve-3d;
-    }
-
-    #startBtn {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: #ff88cc;
-      border: none;
-      color: white;
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 30px;
-      box-shadow: 0 0 10px #ff88cc;
-      cursor: pointer;
-      z-index: 9999;
     }
 
     .flying-text {
       position: absolute;
       top: -100px;
       white-space: nowrap;
-      font-size: 10px;
+      font-size: 20px;
       font-style: italic;
-      font-weight: 500;
+      font-weight: 600;
       color: #ffe0f0;
       text-shadow:
-        0 0 2px #ffaad0,
-        0 0 4px #ff88cc,
-        0 0 8px #ff66bb;
+        0 0 4px #ffaad0,
+        0 0 8px #ff88cc,
+        0 0 15px #ff66bb;
       transform-origin: center;
-      animation: dropStraight 12s ease-in-out forwards;
-
+      animation: dropStraight 10s linear forwards;
     }
 
     @keyframes dropStraight {
@@ -70,74 +51,69 @@
 
     .heart {
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       background: #ff5577;
       transform: rotate(45deg);
-      animation: dropStraight 12s ease-in-out forwards;
-
-      filter: drop-shadow(0 0 3px #ff6699);
+      animation: floatHeart3D 10s ease-in forwards;
+      filter: drop-shadow(0 0 6px #ff6699);
+      transform-style: preserve-3d;
     }
 
     .heart::before,
     .heart::after {
       content: '';
       position: absolute;
-      width: 8px;
-      height: 8px;
+      width: 14px;
+      height: 14px;
       background: #ff5577;
       border-radius: 50%;
-      filter: drop-shadow(0 0 3px #ff6699);
+      filter: drop-shadow(0 0 6px #ff6699);
     }
 
     .heart::before {
-      top: -4px;
+      top: -7px;
       left: 0;
     }
 
     .heart::after {
-      left: -4px;
+      left: -7px;
       top: 0;
     }
 
     @keyframes floatHeart3D {
       0% {
-        transform: translateY(-30px) translateZ(100px) rotate(45deg);
+        transform: translateY(-30px) translateZ(150px) rotate(45deg);
         opacity: 1;
       }
       100% {
-        transform: translateY(110vh) translateZ(-150px) rotate(45deg);
+        transform: translateY(110vh) translateZ(-200px) rotate(45deg);
         opacity: 0;
       }
     }
   </style>
 </head>
 <body>
-  <button id="startBtn" onclick="startMusic()">💖 Bắt đầu 💖</button>
-
-  <audio id="bgm" loop>
-    <source src="only.mp3" type="audio/mpeg">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
-  </audio>
-
   <script>
     const messages = [
-      "happy anniversary", "Khánh Duy 💋", "365 days", "Siêu yêu anhhhhh",
-      "Bên nhau thật lâu nha 💓", "Mỗi ngày là một niềm vui", "Anh là tất cả", "love you",
-      "Tô Huệ", "Cảm ơn vì anh đã đến", "kiss 💞"
-    ];
+  "happy anniversary", "Khánh Duy 💋", "365 days", "Siêu yêu anhhhhh",
+  "Bên nhau thật lâu nha 💓", "Mỗi ngày là một niềm vui", "Anh là tất cả", "love you",
+  "Tô Huệ", "Cảm ơn vì anh đã đến", "kiss 💞"
+];
 
     function createFlyingText(message) {
       const el = document.createElement('div');
       el.className = 'flying-text';
       el.textContent = message;
 
-      const z = 30 + Math.random() * 100;
+      // Không xoay góc nữa, chỉ dịch theo Z để tạo chiều sâu
+      const z = 100 + Math.random() * 300;
       el.style.setProperty('--z', `${z}px`);
-      el.style.left = `${5 + Math.random() * 90}vw`;
+
+      el.style.left = `${Math.random() * 100}vw`;
 
       document.body.appendChild(el);
-      setTimeout(() => el.remove(), 9000);
+      setTimeout(() => el.remove(), 10000);
     }
 
     function createHeart() {
@@ -145,25 +121,166 @@
       heart.className = 'heart';
       heart.style.left = `${Math.random() * 100}vw`;
       heart.style.top = `-30px`;
-      heart.style.animationDuration = `${8 + Math.random() * 2}s`;
+      heart.style.animationDuration = `${9 + Math.random() * 4}s`;
 
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 11000);
+      setTimeout(() => heart.remove(), 1400<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Không gian 180 độ lãng mạn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background: #000000;
+      overflow: hidden;
+      font-family: 'Quicksand', sans-serif;
+      perspective: 1000px;
+      height: 100vh;
+      position: relative;
+      transform-style: preserve-3d;
     }
 
-    function startMusic() {
-      const music = document.getElementById('bgm');
-      music.play().catch(e => console.log("Không thể phát nhạc:", e));
-      document.getElementById('startBtn').style.display = 'none';
-
-      // Bắt đầu hiệu ứng
-      setInterval(() => {
-        const msg = messages[Math.floor(Math.random() * messages.length)];
-        createFlyingText(msg);
-      }, 600);
-
-      setInterval(createHeart, 200);
+    .flying-text {
+      position: absolute;
+      top: -100px;
+      white-space: nowrap;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: 600;
+      color: #ffe0f0;
+      text-shadow:
+        0 0 4px #ffaad0,
+        0 0 8px #ff88cc,
+        0 0 15px #ff66bb;
+      transform-origin: center;
+      animation: dropStraight 10s linear forwards;
     }
+
+    @keyframes dropStraight {
+      0% {
+        transform: translateY(-100px) translateZ(var(--z));
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) translateZ(var(--z));
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: #ff5577;
+      transform: rotate(45deg);
+      animation: floatHeart3D 10s ease-in forwards;
+      filter: drop-shadow(0 0 6px #ff6699);
+      transform-style: preserve-3d;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: #ff5577;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 6px #ff6699);
+    }
+
+    .heart::before {
+      top: -7px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7px;
+      top: 0;
+    }
+
+    @keyframes floatHeart3D {
+      0% {
+        transform: translateY(-30px) translateZ(150px) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) translateZ(-200px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const messages = [
+  "happy anniversary", "Khánh Duy 💋", "365 days", "Siêu yêu anhhhhh",
+  "Bên nhau thật lâu nha 💓", "Mỗi ngày là một niềm vui", "Anh là tất cả", "love you",
+  "Tô Huệ", "Cảm ơn vì anh đã đến", "kiss 💞"
+];
+
+    function createFlyingText(message) {
+      const el = document.createElement('div');
+      el.className = 'flying-text';
+      el.textContent = message;
+
+      // Không xoay góc nữa, chỉ dịch theo Z để tạo chiều sâu
+      const z = 100 + Math.random() * 300;
+      el.style.setProperty('--z', `${z}px`);
+
+      el.style.left = `${Math.random() * 100}vw`;
+
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 10000);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = `${Math.random() * 100}vw`;
+      heart.style.top = `-30px`;
+      heart.style.animationDuration = `${9 + Math.random() * 4}s`;
+
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 14000);
+    }
+
+    setInterval(() => {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      createFlyingText(msg);
+    }, 500);
+
+    setInterval(createHeart, 500);
   </script>
-</body>
+<audio autoplay loop>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ audio.
+</audio>
+
+$1
+</html>
+0);
+    }
+
+    setInterval(() => {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      createFlyingText(msg);
+    }, 500);
+
+    setInterval(createHeart, 500);
+  </script>
+<audio autoplay loop>
+  <source src="your-music-file.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ audio.
+</audio>
+
+$1
 </html>
